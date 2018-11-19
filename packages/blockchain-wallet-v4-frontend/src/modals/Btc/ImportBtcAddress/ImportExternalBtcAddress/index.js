@@ -47,6 +47,7 @@ class ImportExternalBitcoinAddress extends React.PureComponent {
             </Label>
             <Row>
               <Field
+                autoFocus
                 name='addrOrPriv'
                 validate={[validBitcoinAddressOrPrivateKey, required]}
                 component={TextBox}

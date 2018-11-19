@@ -6,7 +6,8 @@ const BaseTextInput = styled.input.attrs({
   type: 'text',
   'data-lpignore': props => props.noLastPass,
   disabled: props => props.disabled,
-  maxLength: props => props.maxLength
+  maxLength: props => props.maxLength,
+  autoFocus: props => props.autoFocus
 })`
   display: block;
   width: 100%;
@@ -72,11 +73,12 @@ class TextInput extends React.Component {
   }
 
   render () {
-    const { errorState, disabled, ...rest } = this.props
+    const { autoFocus, errorState, disabled, ...rest } = this.props
     const borderColor = selectBorderColor(errorState)
 
     return (
       <BaseTextInput
+        autoFocus={autoFocus}
         innerRef={this.refInput}
         borderColor={borderColor}
         disabled={disabled}
