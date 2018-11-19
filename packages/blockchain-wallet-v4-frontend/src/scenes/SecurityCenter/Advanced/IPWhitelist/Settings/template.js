@@ -45,6 +45,7 @@ const Settings = props => {
       {updateToggled && (
         <SettingForm onSubmit={handleSubmit}>
           <Input
+            autoFocus
             name='IPWhitelist'
             validate={[validIpList]}
             component={TextBox}

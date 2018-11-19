@@ -23,37 +23,38 @@ const getErrorState = meta => {
   return meta.touched && meta.invalid ? 'invalid' : 'initial'
 }
 
-const NumberBox = field => {
-  const errorState = getErrorState(field.meta)
+const NumberBox = props => {
+  const errorState = getErrorState(props.meta)
 
   return (
-    <Container className={field.className}>
+    <Container className={props.className}>
       <NumberInput
-        {...field.input}
+        {...props.input}
+        autoFocus={props.autoFocus}
         errorState={errorState}
-        placeholder={field.placeholder}
+        placeholder={props.placeholder}
       />
-      {field.meta.touched &&
-        field.meta.error && (
+      {props.meta.touched &&
+        props.meta.error && (
           <Error
             size='12px'
             weight={300}
             color='error'
-            errorBottom={field.errorBottom}
+            errorBottom={props.errorBottom}
           >
-            {field.meta.error}
+            {props.meta.error}
           </Error>
         )}
-      {field.meta.touched &&
-        !field.meta.error &&
-        field.meta.warning && (
+      {props.meta.touched &&
+        !props.meta.error &&
+        props.meta.warning && (
           <Error
             size='12px'
             weight={300}
             color='sent'
-            errorBottom={field.errorBottom}
+            errorBottom={props.errorBottom}
           >
-            {field.meta.warning}
+            {props.meta.warning}
           </Error>
         )}
     </Container>

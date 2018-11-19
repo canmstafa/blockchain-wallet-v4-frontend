@@ -24,6 +24,12 @@ import media from 'services/ResponsiveService'
 
 const pulseAnimation = keyframes`${pulse}`
 
+const TwoStepSecuritySummary = styled(SecuritySummary)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
 const SecuritySummaryChoice = styled(SecuritySummary)`
   width: 100%;
   @media (min-width: 992px) {
@@ -280,10 +286,10 @@ const TwoStepVerification = props => {
           <IconContainer>
             <SecurityIcon name='lock' enabled={twoFAEnabled} />
           </IconContainer>
-          <SecuritySummary>
+          <TwoStepSecuritySummary>
             <Header>{renderHeader()}</Header>
             <SecurityDescription>{renderDescription()}</SecurityDescription>
-          </SecuritySummary>
+          </TwoStepSecuritySummary>
           {renderDisable()}
         </IconAndHeaderContainer>
         {!uiState.verifyToggled && !props.alone ? (

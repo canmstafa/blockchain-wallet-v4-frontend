@@ -35,6 +35,7 @@ const Settings = props => {
           <Wrapper>
             <FormItem>
               <Field
+                autoFocus
                 name='autoLogoutTime'
                 component={NumberBox}
                 validate={[isValidAutoLogoutTime]}

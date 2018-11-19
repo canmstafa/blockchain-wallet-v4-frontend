@@ -43,17 +43,16 @@ const Error = styled(Text)`
   top: ${props => (props.errorBottom ? '40px' : '-20px')};
   right: 0;
 `
+const TelInput = styled(IntlTelInput).attrs({
+  autoFocus: props => props.autoFocus
+})`
+  width: 100%;
+`
 
 class PhoneNumberBox extends React.Component {
   componentDidMount () {
     if (this.tel) {
       this.tel.onfocus = this.props.input.onFocus
-    }
-    // hack to use autoFocus but not trigger validation errors
-    // before user interacts with form
-    if (this.tel && this.props.autoFocus) {
-      this.tel.focus()
-      this.props.meta.touched = false
     }
   }
 
@@ -71,10 +70,16 @@ class PhoneNumberBox extends React.Component {
   }
 
   render () {
-    const field = this.props
-    const { input, defaultValue, meta, errorBottom, disabled } = field
+    const {
+      autoFocus,
+      input,
+      defaultValue,
+      meta,
+      errorBottom,
+      disabled
+    } = this.props
     let { touched, error, warning } = meta
-    const countryCodeField = prop('countryCode', field)
+    const countryCodeField = prop('countryCode', this.props)
     const upperCountryCode = Remote.is(countryCodeField)
       ? countryCodeField.getOrElse('US')
       : countryCodeField || 'US'
@@ -82,7 +87,8 @@ class PhoneNumberBox extends React.Component {
 
     return (
       <Container>
-        <IntlTelInput
+        <TelInput
+          autoFocus={autoFocus}
           ref={this.bindTel}
           disabled={disabled}
           defaultValue={defaultValue || input.value}

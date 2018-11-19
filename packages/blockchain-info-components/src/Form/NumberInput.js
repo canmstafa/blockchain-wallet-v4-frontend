@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const BaseNumberInput = styled.input.attrs({
-  type: 'number'
+  type: 'number',
+  autofocus: props => props.autoFocus
 })`
   display: block;
   width: 100%;

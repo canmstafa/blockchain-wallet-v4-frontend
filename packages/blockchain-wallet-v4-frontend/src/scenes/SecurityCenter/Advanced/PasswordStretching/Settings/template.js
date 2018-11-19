@@ -44,6 +44,7 @@ const Settings = props => {
       {updateToggled && (
         <SettingForm onSubmit={handleSubmit}>
           <Field
+            autoFocus
             name='passwordStretching'
             component={NumberBox}
             validate={validPasswordStretchingNumber}

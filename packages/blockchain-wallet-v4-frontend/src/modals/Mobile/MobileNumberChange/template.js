@@ -20,7 +20,9 @@ const MobileNumber = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 5px;
+  justify-content: center;
+  padding: 30px 0 20px;
+  width: 100%;
 
   & > :last-child {
     flex-basis: 200px;
@@ -66,10 +68,11 @@ const MobileNumberChange = props => {
             </Text>
             <Field
               name='mobileNumber'
-              validate={[validMobileNumber, required]}
               component={PhoneNumberBox}
+              validate={[required, validMobileNumber]}
               countryCode={countryCode}
               defaultValue={smsNumber}
+              placeholder='212-555-5555'
               errorBottom
             />
           </MobileNumber>
