@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "Начать",
   "modals.welcome.thanks": "Спасибо, что присоединились к {walletMillions} миллионам пользователей кошелька Blockchain, помогая создать открытое, доступное и справедливое финансовое будущее. Ваш кошелек делает транзакцию с цифровой валютой простой и безопасной. Начните прямо сейчас.",

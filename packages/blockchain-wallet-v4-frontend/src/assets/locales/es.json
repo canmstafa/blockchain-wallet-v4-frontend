@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "Empezar",
   "modals.welcome.thanks": "Gracias por unirse a los más de {walletMillions} millones de usuarios de billeteras Blockchain y ayudar a crear un futuro financiero justo, accesible y abierto. Con su billetera, las transacciones de monedas digitales son sencillas y seguras. Empiece ahora.",

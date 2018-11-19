@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "利用を開始する",
   "modals.welcome.thanks": "オープンでアクセスしやすく公平な金融の未来の創造を後押しする、{walletMillions} 00万を超えるユーザーを抱えるブロックチェーンウォレットをご利用いただき、ありがとうございます。ウォレットによりデジタル通貨の取引がシンプルかつ安全になります。今すぐ始めましょう。",

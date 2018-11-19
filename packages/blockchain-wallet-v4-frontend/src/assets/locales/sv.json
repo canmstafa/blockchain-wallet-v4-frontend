@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "Kom igång",
   "modals.welcome.thanks": "Tack för att du förenar dig med över {walletMillions} miljoner andra användare av Blockchain-plånboken och hjälper oss att forma en öppen, tillgänglig och rättvis ekonomisk framtid. Din plånbok gör det enkelt och säkert att sköta transaktioner med digitala valutor. Kom igång nu.",

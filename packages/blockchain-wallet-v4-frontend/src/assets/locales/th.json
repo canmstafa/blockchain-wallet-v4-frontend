@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "เริ่มกันเลย",
   "modals.welcome.thanks": "ขอบคุณสำหรับสำหรับการเข้าร่วมกับผู้ใช้กระเป๋าเงิน Blockchain {walletMillions} ล้านคนในการสร้างอนาคตทางการเงินที่เปิดเผย เข้าถึงได้และเป็นธรรม กระเป๋าเงินของคุณทำให้การทำธุรกรรมด้วยสกุลเงินดิจิทัลนั้นเรียบง่ายและปลอดภัย เริ่มต้นตอนนี้",

@@ -1071,7 +1071,6 @@
   "modals.userexists.emailused": null,
   "modals.userexists.kyccomplete": null,
   "modals.userexists.kycnotcomplete": null,
-  "modals.userexists.learnmore": null,
   "modals.userexists.title": null,
   "modals.welcome.continue": "Démarrer",
   "modals.welcome.thanks": "Merci d'avoir rejoint plus de {walletMillions} millions d'utilisateurs du portefeuille Blockchain pour créer un avenir financier ouvert, accessible et équitable. Votre portefeuille simplifie et sécurisé les transactions avec les monnaies numériques. Commencez !",
