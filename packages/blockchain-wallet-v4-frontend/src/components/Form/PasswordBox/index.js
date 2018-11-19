@@ -19,14 +19,22 @@ const Error = styled(Text)`
   height: 15px;
   top: -20px;
   right: 0;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0;
 `
 const getErrorState = ({ touched, invalid }) => {
   return touched && invalid ? 'invalid' : 'initial'
 }
 
-const PasswordBox = field => {
-  const { meta, input, score, disabled, borderColor, noLastPass } = field
+const PasswordBox = props => {
+  const {
+    autoFocus,
+    meta,
+    input,
+    score,
+    disabled,
+    borderColor,
+    noLastPass
+  } = props
   const { touched, error, active } = meta
   const errorState = getErrorState(meta)
   const scoreVisible = score ? input.value.length > 0 : false
@@ -35,11 +43,12 @@ const PasswordBox = field => {
     <Container>
       <PasswordInput
         {...input}
+        autoFocus={autoFocus}
         disabled={disabled}
         active={active}
         controlledBorderColor={borderColor}
         errorState={errorState}
-        data-e2e={field['data-e2e']}
+        data-e2e={props['data-e2e']}
         noLastPass={noLastPass}
       />
       {scoreVisible ? <PasswordScore value={input.value} /> : <div />}

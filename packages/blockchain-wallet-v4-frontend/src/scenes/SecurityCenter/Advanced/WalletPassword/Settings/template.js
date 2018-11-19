@@ -63,6 +63,7 @@ const Settings = props => {
                 />
               </FormLabel>
               <Field
+                autoFocus
                 noLastPass
                 name='currentPassword'
                 component={PasswordBox}

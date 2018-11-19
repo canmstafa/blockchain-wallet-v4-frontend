@@ -4,12 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import { Field, reduxForm } from 'redux-form'
 import styled from 'styled-components'
 
-import {
-  Button,
-  ButtonGroup,
-  Text,
-  TextGroup
-} from 'blockchain-info-components'
+import { Button, Text, TextGroup } from 'blockchain-info-components'
 import { Types } from 'blockchain-wallet-v4'
 import { FormGroup, FormItem, FormLabel, PasswordBox } from 'components/Form'
 import { SettingForm, SettingWrapper } from 'components/Setting'
@@ -18,14 +13,15 @@ import { required, validPasswordConfirmation } from 'services/FormHelper'
 const SecondPasswordWrapper = styled(SettingWrapper)`
   width: ${props => (props.toggled ? '150%' : 'initial')};
 `
-const ButtonWrapper = styled(ButtonGroup)`
+const ButtonWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   margin-top: 10px;
-  & > :first-child {
-    margin-right: 5px;
+  & > :last-child {
+    margin-left: 5px;
   }
 `
 
@@ -78,6 +74,7 @@ const Settings = props => {
               />
             </Text>
             <Field
+              autoFocus
               name='secondPassword'
               component={PasswordBox}
               validate={[required, validateSecondPassword]}
@@ -147,6 +144,7 @@ const Settings = props => {
                   />
                 </FormLabel>
                 <Field
+                  autoFocus
                   name='secondPassword'
                   validate={[validateSecondPassword, isMainPassword]}
                   component={PasswordBox}
