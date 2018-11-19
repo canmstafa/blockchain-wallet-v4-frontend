@@ -9,12 +9,21 @@ import Convertor from './Convertor'
 
 class FiatConvertorContainer extends React.PureComponent {
   render () {
-    const { input, meta, data, disabled, errorBottom, className } = this.props
+    const {
+      autoFocus,
+      input,
+      meta,
+      data,
+      disabled,
+      errorBottom,
+      className
+    } = this.props
 
     return data.cata({
       Success: value => (
         <Convertor
           {...value}
+          autoFocus={autoFocus}
           className={className}
           meta={meta}
           errorBottom={errorBottom}

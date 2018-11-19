@@ -72,13 +72,17 @@ const Google = props => {
           </QRCodeCopy>
           <QRInputWrapper>
             <Field
+              autoFocus
               name='authCode'
               component={TextBox}
               validate={[required]}
               placeholder='111 222'
             />
             <Button type='submit' nature='primary' disabled={invalid}>
-              Verify Code
+              <FormattedMessage
+                id='scenes.security.twostepverification.authenticator.verifycode'
+                defaultMessage='Verify Code'
+              />
             </Button>
           </QRInputWrapper>
         </QRCodeContainer>

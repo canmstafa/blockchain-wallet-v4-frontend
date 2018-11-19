@@ -61,6 +61,7 @@ const getErrorState = meta => {
 
 const Convertor = props => {
   const {
+    autoFocus,
     coin,
     disabled,
     fiat,
@@ -81,6 +82,7 @@ const Convertor = props => {
       <FiatConvertorInput>
         <Container>
           <TextInput
+            autoFocus={autoFocus}
             value={coin}
             disabled={disabled}
             placeholder='0'

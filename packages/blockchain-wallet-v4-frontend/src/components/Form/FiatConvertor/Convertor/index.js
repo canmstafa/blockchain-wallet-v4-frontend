@@ -81,6 +81,7 @@ class ConvertorContainer extends React.PureComponent {
   render () {
     const { coin, fiat } = this.state
     const {
+      autoFocus,
       disabled,
       unit,
       currency,
@@ -91,6 +92,7 @@ class ConvertorContainer extends React.PureComponent {
 
     return (
       <Convertor
+        autoFocus={autoFocus}
         coin={coin}
         fiat={fiat}
         unit={unit}

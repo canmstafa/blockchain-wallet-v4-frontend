@@ -8,10 +8,6 @@ import { getData } from './selectors'
 import ShowPrivateKeyTemplate from './template'
 
 class ShowXlmPrivateKeyContainer extends Component {
-  componentDidUnmount () {
-    this.props.actions.clearShownEthPrivateKey()
-  }
-
   render () {
     const step = this.props.priv == null ? 0 : 1
     return (

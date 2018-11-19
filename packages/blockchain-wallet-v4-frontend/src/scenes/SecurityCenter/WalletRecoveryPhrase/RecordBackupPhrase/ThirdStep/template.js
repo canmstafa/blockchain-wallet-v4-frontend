@@ -64,7 +64,7 @@ const ThirdStep = props => {
     <Wrapper>
       <Form onSubmit={handleSubmit}>
         <Container>
-          {indexes.map(index => (
+          {indexes.map((index, i) => (
             <WordContainer key={index}>
               <Text size='14px' weight={300} style={{ marginBottom: '4px' }}>
                 {`${languageHelper(index)} word`}
@@ -75,6 +75,7 @@ const ThirdStep = props => {
                 validate={[required]}
                 errorBottom
                 noLastPass
+                autoFocus={i === 0}
               />
             </WordContainer>
           ))}

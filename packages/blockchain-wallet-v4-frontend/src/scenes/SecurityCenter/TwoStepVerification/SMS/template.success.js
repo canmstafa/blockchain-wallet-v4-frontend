@@ -62,6 +62,7 @@ const SmsAuth = props => {
               </Text>
               <QRInputWrapper>
                 <Field
+                  autoFocus
                   name='mobileNumber'
                   component={PhoneNumberBox}
                   validate={[required, validMobileNumber]}
@@ -70,7 +71,10 @@ const SmsAuth = props => {
                   placeholder='212-555-5555'
                 />
                 <Button type='submit' nature='primary' disabled={invalid}>
-                  Get Verification Code
+                  <FormattedMessage
+                    id='scenes.security.twostepverification.sms.getcode'
+                    defaultMessage='Get Verification Code'
+                  />
                 </Button>
               </QRInputWrapper>
             </Fragment>
@@ -84,15 +88,22 @@ const SmsAuth = props => {
               </Text>
               <QRInputWrapper>
                 <Field
+                  autoFocus
                   name='verificationCode'
                   component={TextBox}
                   validate={[required]}
                 />
                 <Link weight={200} size='12px' onClick={changeMobileNumber}>
-                  Change mobile number
+                  <FormattedMessage
+                    id='scenes.security.twostepverification.sms.changenumber'
+                    defaultMessage='Change mobile number'
+                  />
                 </Link>
                 <Button type='submit' nature='primary' disabled={!code}>
-                  Submit Code
+                  <FormattedMessage
+                    id='scenes.security.twostepverification.sms.submitcode'
+                    defaultMessage='Submit Code'
+                  />
                 </Button>
               </QRInputWrapper>
             </Fragment>

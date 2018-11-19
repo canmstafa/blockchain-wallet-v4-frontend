@@ -80,6 +80,7 @@ const Yubikey = props => {
           </YubikeyCopy>
           <YubikeyInputWrapper>
             <YubikeyInput
+              autoFocus
               type='password'
               name='yubikeyCode'
               value={value}

@@ -141,6 +141,7 @@ const FirstStep = props => {
             />
           </FormLabel>
           <Field
+            autoFocus
             name='amount'
             component={FiatConvertor}
             validate={[required, invalidAmountMin, invalidAmountMax]}

@@ -1,6 +1,8 @@
 import React from 'react'
-import { compose } from 'redux'
+import { bindActionCreators, compose } from 'redux'
+import { connect } from 'react-redux'
 
+import { actions } from 'data'
 import wizardProvider from 'providers/WizardProvider'
 import modalEnhancer from 'providers/ModalEnhancer'
 import RequestBtc from './template'
@@ -12,6 +14,7 @@ class RequestBtcContainer extends React.PureComponent {
 
   componentDidMount () {
     this.props.resetStep()
+    this.props.formActions.reset('requestBitcoin')
   }
 
   setReceiveAddress = addr => {
@@ -20,7 +23,7 @@ class RequestBtcContainer extends React.PureComponent {
 
   render () {
     const { receiveAddress } = this.state
-    const { step, position, total, closeAll, ...rest } = this.props
+    const { closeAll, step, position, total, ...rest } = this.props
 
     return (
       <RequestBtc position={position} total={total} closeAll={closeAll}>
@@ -32,8 +35,15 @@ class RequestBtcContainer extends React.PureComponent {
     )
   }
 }
+const mapDispatchToProps = dispatch => ({
+  formActions: bindActionCreators(actions.form, dispatch)
+})
 
 const enhance = compose(
+  connect(
+    null,
+    mapDispatchToProps
+  ),
   modalEnhancer('RequestBtc'),
   wizardProvider('requestBtc', 2)
 )

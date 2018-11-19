@@ -49,13 +49,19 @@ class PhoneNumberBox extends React.Component {
     if (this.tel) {
       this.tel.onfocus = this.props.input.onFocus
     }
+    // hack to use autoFocus but not trigger validation errors
+    // before user interacts with form
+    if (this.tel && this.props.autoFocus) {
+      this.tel.focus()
+      this.props.meta.touched = false
+    }
   }
 
-  changeHandler = (status, value, countryData, number, id) => {
+  changeHandler = (status, value, countryData, number) => {
     this.props.input.onChange(number)
   }
 
-  blurHandler = (status, value, countryData, number, id) => {
+  blurHandler = (status, value, countryData, number) => {
     this.props.input.onBlur(number)
   }
 
@@ -67,7 +73,7 @@ class PhoneNumberBox extends React.Component {
   render () {
     const field = this.props
     const { input, defaultValue, meta, errorBottom, disabled } = field
-    const { touched, error, warning } = meta
+    let { touched, error, warning } = meta
     const countryCodeField = prop('countryCode', field)
     const upperCountryCode = Remote.is(countryCodeField)
       ? countryCodeField.getOrElse('US')
@@ -91,24 +97,14 @@ class PhoneNumberBox extends React.Component {
         />
         {touched &&
           error && (
-            <Error
-              size='12px'
-              weight={300}
-              color='error'
-              errorBottom={errorBottom}
-            >
+            <Error color='error' errorBottom={errorBottom}>
               {error}
             </Error>
           )}
         {touched &&
           !error &&
           warning && (
-            <Error
-              size='12px'
-              weight={300}
-              color='sent'
-              errorBottom={errorBottom}
-            >
+            <Error color='sent' errorBottom={errorBottom}>
               {warning}
             </Error>
           )}

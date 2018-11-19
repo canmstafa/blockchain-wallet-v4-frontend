@@ -32,7 +32,7 @@ const IconAndHeaderContainer = styled.div`
 const BackupButton = styled(Button)`
   width: 100px;
   font-size: 12px;
-  min-width: 0px;
+  min-width: 0;
   height: auto;
   span {
     white-space: initial;
@@ -43,7 +43,7 @@ const BackupButton = styled(Button)`
   }
   @media (min-width: 1224px) {
     width: 140px;
-    min-width: 0px;
+    min-width: 0;
     font-size: 14px;
   }
 `

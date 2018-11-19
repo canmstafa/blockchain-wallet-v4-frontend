@@ -148,7 +148,6 @@ const FirstStep = props => {
             </FormLabel>
             <Field
               name='newEmail'
-              autoFocus
               validate={[validNullableEmail]}
               component={TextBox}
             />
